@@ -1,3 +1,3 @@
 # Mastering-PHP7
 
-### Started learning PHP from Hasin Hayder's 'Mastering PHP7' course again after several months
+### This repo contains code from hasin hayder Mastering PHP 7.0 course

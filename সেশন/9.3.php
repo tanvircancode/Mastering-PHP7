@@ -1,14 +1,14 @@
 <?php
 
 session_start([
-    'cookie_lifetime' => 300,
+    'cookie_lifetime' => 60,
 ]);
 $error= false;
 $_SESSION["loggedin"]='';
 //session_destroy();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
-    if ('admin' == $_POST['username'] && 'rabbit' == $_POST['password']) {
+    if ('admin' == $_POST['username'] && '6d0ebbbdce32474db8141d23d2c01bd9628d6e5f' == sha1($_POST['password'] )) {
        $_SESSION["loggedin"] = true;
     }
     else
@@ -63,6 +63,7 @@ if ( true == $_SESSION["loggedin"] ) {
       <div class="row">
           <div class="column column-60 column-offset-20">
            <?php
+    //    echo hash('sha1',"rabbit")."<br/>";
            if($error)
            {
               echo "<blockquuote>Username and Passowrd didn't match</blockquote>";
